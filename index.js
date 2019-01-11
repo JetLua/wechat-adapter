@@ -1,4 +1,5 @@
 import Canvas from './canvas'
+import Image from './image'
 import document from './document'
 import navigator from './navigator'
 import TouchEvent from './touch-event'
@@ -10,12 +11,15 @@ const
 
 
 GameGlobal.canvas = canvas
-GameGlobal.navigator = navigator
-GameGlobal.document = document
-GameGlobal.TouchEvent = TouchEvent
+
+canvas.addEventListener = document.addEventListener
+canvas.removeEventListener = document.removeEventListener
 
 if (platform === 'devtools') {
   Object.defineProperties(window, {
+    TouchEvent: {value: TouchEvent},
+    Image: {value: Image},
+    ontouchstart: {value: noop},
     addEventListener: {value: noop}
   })
 
@@ -25,10 +29,12 @@ if (platform === 'devtools') {
       Object.defineProperty(window.document, key, {value: document[key]})
     }
   }
-
-  canvas.addEventListener = window.document.addEventListener
-  canvas.removeEventListener = window.document.removeEventListener
-
 } else {
+  GameGlobal.TouchEvent = TouchEvent
+  GameGlobal.Image = Image
+  GameGlobal.ontouchstart = noop
   GameGlobal.window = GameGlobal
+  GameGlobal.navigator = navigator
+  GameGlobal.document = document
+  GameGlobal.addEventListener = noop
 }

@@ -1,4 +1,5 @@
 import Canvas from './canvas'
+import Image from './image'
 import Element from './element'
 
 const stack = {}
@@ -27,6 +28,10 @@ export default {
     switch (tag) {
       case 'canvas': {
         return new Canvas()
+      }
+
+      case 'image': {
+        return new Image()
       }
 
       default: {

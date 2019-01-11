@@ -13,7 +13,7 @@ class TouchEvent {
 function factory(type) {
   return ev => {
     const touchEvent = new TouchEvent(type)
-    touchEvent.touches = ev.touches
+    touchEvent.touches =
     touchEvent.targetTouches = ev.touches
     touchEvent.changedTouches = ev.changedTouches
     touchEvent.timeStamp = ev.timeStamp

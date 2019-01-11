@@ -1,5 +1,5 @@
 export default class {
-  style = {}
+  style = {cursor: null}
 
   appendChild() {
 
