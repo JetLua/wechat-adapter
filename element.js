@@ -1,4 +1,4 @@
-export default class {
+export class Element {
   style = {cursor: null}
 
   appendChild() {
@@ -13,3 +13,12 @@ export default class {
 
   }
 }
+
+export class HTMLCanvasElement extends Element {
+
+}
+
+export class HTMLImageElement extends Element {
+
+}
+

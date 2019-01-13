@@ -1,7 +1,14 @@
-import Element from './element'
+import {HTMLCanvasElement} from './element'
 
-export default function() {
+function Canvas() {
   const canvas = wx.createCanvas()
-  canvas.__proto__.__proto__ = new Element()
+  canvas.__proto__.__proto__ = new HTMLCanvasElement()
   return canvas
+}
+
+const canvas = new Canvas()
+
+export {
+  canvas,
+  Canvas
 }

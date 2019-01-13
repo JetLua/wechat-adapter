@@ -1,6 +1,6 @@
-import Canvas from './canvas'
+import {Canvas} from './canvas'
 import Image from './image'
-import Element from './element'
+import {Element} from './element'
 
 const stack = {}
 
@@ -30,7 +30,7 @@ export default {
         return new Canvas()
       }
 
-      case 'image': {
+      case 'img': {
         return new Image()
       }
 

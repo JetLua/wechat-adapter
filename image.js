@@ -1,3 +1,7 @@
+import {HTMLImageElement} from './element'
+
 export default function() {
-  return wx.createImage()
+  const image = wx.createImage()
+  image.__proto__.__proto__ = new HTMLImageElement()
+  return image
 }
