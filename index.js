@@ -3,7 +3,7 @@ import Image from './image'
 import document from './document'
 import navigator from './navigator'
 import TouchEvent from './touch-event'
-import {Element, HTMLCanvasElement, HTMLImageElement} from './element'
+import {Element, HTMLCanvasElement, HTMLImageElement, HTMLVideoElement} from './element'
 import location from './location'
 import localStorage from './localStorage'
 import {noop} from './util'
@@ -24,6 +24,7 @@ if (platform === 'devtools') {
     localStorage: {value: localStorage},
     HTMLImageElement: {value: HTMLImageElement},
     HTMLCanvasElement: {value: HTMLCanvasElement},
+    HTMLVideoElement: {value: HTMLVideoElement},
     Element: {value: Element}
   })
 
@@ -44,5 +45,6 @@ if (platform === 'devtools') {
   GameGlobal.localStorage = localStorage
   GameGlobal.HTMLImageElement = HTMLImageElement
   GameGlobal.HTMLCanvasElement = HTMLCanvasElement
+  GameGlobal.HTMLVideoElement = HTMLVideoElement
   GameGlobal.window = GameGlobal
 }

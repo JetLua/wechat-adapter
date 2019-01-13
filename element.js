@@ -22,3 +22,7 @@ export class HTMLImageElement extends Element {
 
 }
 
+export class HTMLVideoElement extends Element {
+
+}
+
