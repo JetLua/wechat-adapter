@@ -17,7 +17,7 @@ function factory(type) {
   return ev => {
     const touchEvent = new TouchEvent(type)
     touchEvent.touches =
-    touchEvent.targetTouches = Array.from(ev.touches)
+    touchEvent.targetTouches = ev.touches
     touchEvent.changedTouches = ev.changedTouches
     touchEvent.timeStamp = ev.timeStamp
     document.dispatch(touchEvent)
