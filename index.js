@@ -25,7 +25,8 @@ if (platform === 'devtools') {
     HTMLImageElement: {value: HTMLImageElement},
     HTMLCanvasElement: {value: HTMLCanvasElement},
     HTMLVideoElement: {value: HTMLVideoElement},
-    Element: {value: Element}
+    Element: {value: Element},
+    Image: {value: Image}
   })
 
   for (const key in document) {

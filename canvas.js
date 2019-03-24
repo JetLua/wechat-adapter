@@ -1,8 +1,6 @@
-import {HTMLCanvasElement} from './element'
-
 function Canvas() {
   const canvas = wx.createCanvas()
-  canvas.__proto__.__proto__ = new HTMLCanvasElement()
+  canvas.style = {cursor: null}
   return canvas
 }
 

@@ -1,3 +1,5 @@
+import {canvas} from './canvas'
+
 export class Element {
   style = {cursor: null}
 
@@ -14,13 +16,9 @@ export class Element {
   }
 }
 
-export class HTMLCanvasElement extends Element {
+export const HTMLCanvasElement = canvas.constructor
 
-}
-
-export class HTMLImageElement extends Element {
-
-}
+export const HTMLImageElement = wx.createImage().constructor
 
 export class HTMLVideoElement extends Element {
 
