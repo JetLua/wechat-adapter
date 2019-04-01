@@ -1,5 +1,6 @@
 import {canvas, Canvas} from './canvas'
 import Image from './image'
+import Ajax from './ajax'
 import document from './document'
 import navigator from './navigator'
 import TouchEvent from './touch-event'
@@ -26,7 +27,8 @@ if (platform === 'devtools') {
     HTMLCanvasElement: {value: HTMLCanvasElement},
     HTMLVideoElement: {value: HTMLVideoElement},
     Element: {value: Element},
-    Image: {value: Image}
+    Image: {value: Image},
+    XMLHttpRequest: {value: Ajax}
   })
 
   for (const key in document) {
@@ -47,5 +49,6 @@ if (platform === 'devtools') {
   GameGlobal.HTMLImageElement = HTMLImageElement
   GameGlobal.HTMLCanvasElement = HTMLCanvasElement
   GameGlobal.HTMLVideoElement = HTMLVideoElement
+  GameGlobal.XMLHttpRequest = Ajax
   GameGlobal.window = GameGlobal
 }
