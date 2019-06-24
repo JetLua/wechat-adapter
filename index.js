@@ -44,6 +44,7 @@ if (platform === 'devtools') {
   GameGlobal.navigator = navigator
   GameGlobal.document = document
   GameGlobal.addEventListener = noop
+  GameGlobal.removeEventListener = noop
   GameGlobal.location = location
   GameGlobal.localStorage = localStorage
   GameGlobal.HTMLImageElement = HTMLImageElement
