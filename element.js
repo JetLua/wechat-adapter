@@ -3,17 +3,13 @@ import {canvas} from './canvas'
 export class Element {
   style = {cursor: null}
 
-  appendChild() {
+  appendChild() {}
 
-  }
+  removeChild() {}
 
-  addEventListener() {
+  addEventListener() {}
 
-  }
-
-  removeEventListener() {
-
-  }
+  removeEventListener() {}
 }
 
 export const HTMLCanvasElement = canvas.constructor
