@@ -1,9 +1,9 @@
 import {canvas, Canvas} from './canvas'
-import Image from './image'
-import Ajax from './ajax'
+import Image from './Image'
+import XMLHttpRequest from './XMLHttpRequest'
 import document from './document'
 import navigator from './navigator'
-import TouchEvent from './touch-event'
+import TouchEvent from './TouchEvent'
 import {Element, HTMLCanvasElement, HTMLImageElement, HTMLVideoElement} from './element'
 import location from './location'
 import localStorage from './localStorage'
@@ -28,7 +28,7 @@ if (platform === 'devtools') {
     HTMLVideoElement: {value: HTMLVideoElement},
     Element: {value: Element},
     Image: {value: Image},
-    XMLHttpRequest: {value: Ajax}
+    XMLHttpRequest: {value: XMLHttpRequest}
   })
 
   for (const key in document) {
