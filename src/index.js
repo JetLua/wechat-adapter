@@ -50,6 +50,6 @@ if (platform === 'devtools') {
   GameGlobal.HTMLImageElement = HTMLImageElement
   GameGlobal.HTMLCanvasElement = HTMLCanvasElement
   GameGlobal.HTMLVideoElement = HTMLVideoElement
-  GameGlobal.XMLHttpRequest = Ajax
+  GameGlobal.XMLHttpRequest = XMLHttpRequest
   GameGlobal.window = GameGlobal
 }
