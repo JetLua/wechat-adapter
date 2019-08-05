@@ -1,9 +1,15 @@
 {
   "name": "@iro/wechat-adapter",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A super small adapter for wechat mini game.",
-  "main": "index.js",
+  "main": "dist/wechat-adapter.min.js",
+  "module": "dist/wechat-adapter.es.js",
+  "browserslist": [
+    "android >= 5",
+    "ios >= 8"
+  ],
   "scripts": {
+    "build": "rm -fr dist & rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +26,19 @@
   "bugs": {
     "url": "https://github.com/JetLua/wechat-adapter/issues"
   },
-  "homepage": "https://github.com/JetLua/wechat-adapter#readme"
+  "homepage": "https://github.com/JetLua/wechat-adapter#readme",
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-export-default-from": "^7.5.2",
+    "@babel/plugin-proposal-export-namespace-from": "^7.5.2",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/runtime": "^7.5.5",
+    "@babel/runtime-corejs3": "^7.5.5",
+    "rollup": "^1.18.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-babel-minify": "^9.0.0",
+    "rollup-plugin-commonjs": "^10.0.2",
+    "rollup-plugin-node-resolve": "^5.2.0"
+  }
 }

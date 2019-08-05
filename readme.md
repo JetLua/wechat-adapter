@@ -1,5 +1,6 @@
 # Wechat Adpater
 A super small adapter for wechat mini game.
+> Babel: Now it's not small.
 
 ## Install
 

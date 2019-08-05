@@ -1,5 +1,5 @@
 import {Canvas} from './canvas'
-import Image from './image'
+import Image from './Image'
 import {Element} from './element'
 
 const stack = {}
