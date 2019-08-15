@@ -1,4 +1,4 @@
-# Wechat Adpater
+# Wechat Adapter
 A super small adapter for wechat mini game.
 > Babel: Now it's not small.
 
