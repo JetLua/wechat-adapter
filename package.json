@@ -1,6 +1,6 @@
 {
   "name": "@iro/wechat-adapter",
-  "version": "0.1.5",
+  "version": "0.1.7",
   "description": "A super small adapter for wechat mini game.",
   "main": "dist/wechat-adapter.min.js",
   "module": "dist/wechat-adapter.es.js",
@@ -35,7 +35,7 @@
     "@babel/preset-env": "^7.6.3",
     "@babel/runtime": "^7.6.3",
     "@babel/runtime-corejs3": "^7.6.3",
-    "rollup": "^1.25.0",
+    "rollup": "^1.25.2",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-babel-minify": "^9.1.0",
     "rollup-plugin-commonjs": "^10.1.0",

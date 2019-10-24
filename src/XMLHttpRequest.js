@@ -2,7 +2,7 @@ import {noop} from './util'
 
 export default class {
   method = 'GET'
-  dataType = 'raw'
+  dataType = 'json'
   responseType = 'utf-8'
   onreadystatechange = noop
   abort = noop
@@ -56,22 +56,23 @@ export default class {
     })
   }
 
-  async send(data) {
+  send(data) {
     if (!this.url.match(/^https?/)) {
       this.readyState = 4
       this.status = 200
-      this.readFile(this.url, this.responseType)
-        .then(res => {
-          this.response =
-          this.responseText = res
-          this.emit('readystatechange')
-          this.emit('load')
-        })
-        .catch(err => {
-          this.response =
-          this.responseText = err
-          this.emit('error')
-        })
+      this.readFile(
+        this.url,
+        this.responseType === 'text' ? 'utf-8' : this.responseType
+      ).then(res => {
+        this.response =
+        this.responseText = res
+        this.emit('readystatechange')
+        this.emit('load')
+      }).catch(err => {
+        this.response =
+        this.responseText = err
+        this.emit('error')
+      })
     } else {
       wx.request({
         data,
