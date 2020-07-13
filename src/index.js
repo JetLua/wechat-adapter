@@ -19,18 +19,17 @@ canvas.removeEventListener = document.removeEventListener
 
 if (platform === 'devtools') {
   Object.defineProperties(window, {
-    TouchEvent: {value: TouchEvent},
     Image: {value: Image},
+    Element: {value: Element},
     ontouchstart: {value: noop},
     addEventListener: {value: noop},
+    TouchEvent: {value: TouchEvent},
+    XMLDocument: {value: XMLDocument},
     localStorage: {value: localStorage},
+    XMLHttpRequest: {value: XMLHttpRequest},
+    HTMLVideoElement: {value: HTMLVideoElement},
     HTMLImageElement: {value: HTMLImageElement},
     HTMLCanvasElement: {value: HTMLCanvasElement},
-    HTMLVideoElement: {value: HTMLVideoElement},
-    Element: {value: Element},
-    Image: {value: Image},
-    XMLHttpRequest: {value: XMLHttpRequest}
-    XMLDocument: {value: XMLDocument}
   })
 
   for (const key in document) {
