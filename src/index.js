@@ -1,13 +1,14 @@
-import {canvas, Canvas} from './canvas'
+import {noop} from './util'
 import Image from './Image'
-import XMLHttpRequest from './XMLHttpRequest'
+import location from './location'
 import document from './document'
 import navigator from './navigator'
 import TouchEvent from './TouchEvent'
-import {Element, HTMLCanvasElement, HTMLImageElement, HTMLVideoElement} from './element'
-import location from './location'
+import {canvas, Canvas} from './canvas'
+import XMLDocument from './XMLDocument'
 import localStorage from './localStorage'
-import {noop} from './util'
+import XMLHttpRequest from './XMLHttpRequest'
+import {Element, HTMLCanvasElement, HTMLImageElement, HTMLVideoElement} from './element'
 
 const {platform} = wx.getSystemInfoSync()
 
@@ -29,6 +30,7 @@ if (platform === 'devtools') {
     Element: {value: Element},
     Image: {value: Image},
     XMLHttpRequest: {value: XMLHttpRequest}
+    XMLDocument: {value: XMLDocument}
   })
 
   for (const key in document) {
@@ -38,18 +40,19 @@ if (platform === 'devtools') {
     }
   }
 } else {
-  GameGlobal.TouchEvent = TouchEvent
   GameGlobal.Image = Image
+  GameGlobal.window = GameGlobal
   GameGlobal.ontouchstart = noop
-  GameGlobal.navigator = navigator
   GameGlobal.document = document
+  GameGlobal.location = location
+  GameGlobal.navigator = navigator
+  GameGlobal.TouchEvent = TouchEvent
   GameGlobal.addEventListener = noop
   GameGlobal.removeEventListener = noop
-  GameGlobal.location = location
   GameGlobal.localStorage = localStorage
-  GameGlobal.HTMLImageElement = HTMLImageElement
-  GameGlobal.HTMLCanvasElement = HTMLCanvasElement
-  GameGlobal.HTMLVideoElement = HTMLVideoElement
+  GameGlobal.XMLHttpRequest = XMLDocument
   GameGlobal.XMLHttpRequest = XMLHttpRequest
-  GameGlobal.window = GameGlobal
+  GameGlobal.HTMLImageElement = HTMLImageElement
+  GameGlobal.HTMLVideoElement = HTMLVideoElement
+  GameGlobal.HTMLCanvasElement = HTMLCanvasElement
 }
