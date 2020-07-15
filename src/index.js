@@ -47,9 +47,9 @@ if (platform === 'devtools') {
   GameGlobal.navigator = navigator
   GameGlobal.TouchEvent = TouchEvent
   GameGlobal.addEventListener = noop
+  GameGlobal.XMLDocument = XMLDocument
   GameGlobal.removeEventListener = noop
   GameGlobal.localStorage = localStorage
-  GameGlobal.XMLHttpRequest = XMLDocument
   GameGlobal.XMLHttpRequest = XMLHttpRequest
   GameGlobal.HTMLImageElement = HTMLImageElement
   GameGlobal.HTMLVideoElement = HTMLVideoElement
