@@ -54,4 +54,5 @@ if (platform === 'devtools') {
   GameGlobal.HTMLImageElement = HTMLImageElement
   GameGlobal.HTMLVideoElement = HTMLVideoElement
   GameGlobal.HTMLCanvasElement = HTMLCanvasElement
+  GameGlobal.WebGLRenderingContext = GameGlobal.WebGLRenderingContext || {}
 }

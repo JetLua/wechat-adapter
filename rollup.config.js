@@ -1,15 +1,19 @@
-import babel from 'rollup-plugin-babel'
-import common from 'rollup-plugin-commonjs'
-import minify from 'rollup-plugin-babel-minify'
-import resolve from 'rollup-plugin-node-resolve'
+import babel from '@rollup/plugin-babel'
+import {terser} from 'rollup-plugin-terser'
+import common from '@rollup/plugin-commonjs'
+import resolve from '@rollup/plugin-node-resolve'
 
 export default {
   input: 'src/index.js',
   plugins: [
-    babel(),
+    babel({
+      babelHelpers: 'bundled'
+    }),
     common(),
     resolve(),
-    minify({comments: false})
+    terser({
+      output: {comments: false}
+    })
   ],
   output: [
     {
