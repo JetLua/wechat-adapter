@@ -1,10 +1,11 @@
 import {noop} from './util'
 import Image from './Image'
+import {canvas} from './canvas'
 import location from './location'
 import document from './document'
+import WebSocket from './WebSocket'
 import navigator from './navigator'
 import TouchEvent from './TouchEvent'
-import {canvas, Canvas} from './canvas'
 import XMLDocument from './XMLDocument'
 import localStorage from './localStorage'
 import XMLHttpRequest from './XMLHttpRequest'
@@ -22,6 +23,7 @@ if (platform === 'devtools') {
     Image: {value: Image},
     Element: {value: Element},
     ontouchstart: {value: noop},
+    WebSocket: {value: WebSocket},
     addEventListener: {value: noop},
     TouchEvent: {value: TouchEvent},
     XMLDocument: {value: XMLDocument},
@@ -44,6 +46,7 @@ if (platform === 'devtools') {
   GameGlobal.ontouchstart = noop
   GameGlobal.document = document
   GameGlobal.location = location
+  GameGlobal.WebSocket = WebSocket
   GameGlobal.navigator = navigator
   GameGlobal.TouchEvent = TouchEvent
   GameGlobal.addEventListener = noop

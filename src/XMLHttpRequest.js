@@ -1,12 +1,19 @@
 import {noop} from './util'
 
-export default class {
+export default class XMLHttpRequest {
+  static UNSEND = 0
+  static OPENED = 1
+  static HEADERS_RECEIVED = 2
+  static LOADING = 3
+  static DONE = 4
+
   method = 'GET'
-  dataType = 'json'
+  dataType = 'text'
   responseType = 'utf-8'
   onreadystatechange = noop
   abort = noop
   event = {}
+  responseHeader = {}
 
   header = {
     Accept: '*/*'
@@ -15,6 +22,7 @@ export default class {
   open(method, url) {
     this.method = method
     this.url = url
+    this.readyState = XMLHttpRequest.OPENED
   }
 
   setRequestHeader(key, value) {
@@ -24,6 +32,15 @@ export default class {
   addEventListener(type, handle) {
     this.event[type] = this.event[type] || []
     this.event[type].push(handle)
+  }
+
+  getResponseHeader(key) {
+    return this.responseHeader && this.responseHeader[key]
+  }
+
+  getAllResponseHeaders() {
+    const header = this.responseHeader || {}
+    return Object.entries(header).map(item => item.join(': ')).join('\r\n')
   }
 
   emit(type) {
@@ -57,8 +74,10 @@ export default class {
   }
 
   send(data) {
+    this.readyState = XMLHttpRequest.LOADING
+
     if (!this.url.match(/^https?/)) {
-      this.readyState = 4
+      this.readyState = XMLHttpRequest.DONE
       this.status = 200
       this.readFile(
         this.url,
@@ -82,18 +101,20 @@ export default class {
         dataType: this.dataType,
         responseType: this.responseType === 'text' || this.responseType === 'arraybuffer' ? this.responseType : 'text',
         success: info => {
-          this.readyState = 4
+          this.readyState = XMLHttpRequest.DONE
+          this.responseHeader = info.header
           this.status = info.statusCode
-          this.responseText =
-          this.response = info.data
+          this.response =
+          this.responseText = info.data
           this.emit('load')
           this.emit('readystatechange')
         },
         fail: info => {
-          this.readyState = 4
+          this.readyState = XMLHttpRequest.DONE
           this.status = info.statusCode
           this.response =
           this.responseText = info
+          this.responseHeader = info.header
           this.emit('error')
           this.emit('readystatechange')
         }
