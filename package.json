@@ -1,6 +1,6 @@
 {
   "name": "@iro/wechat-adapter",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A super small adapter for wechat mini game.",
   "main": "dist/wechat-adapter.min.js",
   "module": "dist/wechat-adapter.es.js",
