@@ -42,6 +42,7 @@ if (platform === 'devtools') {
   }
 } else {
   GameGlobal.Image = Image
+  GameGlobal.self = GameGlobal
   GameGlobal.window = GameGlobal
   GameGlobal.ontouchstart = noop
   GameGlobal.document = document
