@@ -8,6 +8,7 @@ import navigator from './navigator'
 import TouchEvent from './TouchEvent'
 import XMLDocument from './XMLDocument'
 import localStorage from './localStorage'
+import * as performance from './performance'
 import XMLHttpRequest from './XMLHttpRequest'
 import {Element, HTMLCanvasElement, HTMLImageElement, HTMLVideoElement} from './element'
 
@@ -51,6 +52,7 @@ if (platform === 'devtools') {
   GameGlobal.navigator = navigator
   GameGlobal.TouchEvent = TouchEvent
   GameGlobal.addEventListener = noop
+  GameGlobal.performance = performance
   GameGlobal.XMLDocument = XMLDocument
   GameGlobal.removeEventListener = noop
   GameGlobal.localStorage = localStorage
