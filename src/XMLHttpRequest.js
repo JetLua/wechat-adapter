@@ -76,7 +76,7 @@ export default class XMLHttpRequest {
   send(data) {
     this.readyState = XMLHttpRequest.LOADING
 
-    if (!this.url.match(/^https?/)) {
+    if (!this.url.match(/^(http(s)?:\/\/)\w+[^\s]+(\.[^\s]+){1,}/)) {
       this.readyState = XMLHttpRequest.DONE
       this.status = 200
       this.readFile(
