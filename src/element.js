@@ -3,6 +3,8 @@ import {canvas} from './canvas'
 export class Element {
   style = {cursor: null}
 
+  pathname = ''
+
   appendChild() {}
 
   removeChild() {}
@@ -10,6 +12,8 @@ export class Element {
   addEventListener() {}
 
   removeEventListener() {}
+
+  setAttribute() {}
 }
 
 export const HTMLCanvasElement = canvas.constructor

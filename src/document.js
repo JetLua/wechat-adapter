@@ -7,6 +7,8 @@ const stack = {}
 export default {
   body: new Element('body'),
 
+  cookie: '',
+
   addEventListener(type, handle) {
     stack[type] = stack[type] || []
     stack[type].push(handle)

@@ -11,7 +11,9 @@ export default class XMLHttpRequest {
   dataType = 'text'
   responseType = 'utf-8'
   onreadystatechange = noop
-  abort = noop
+  onloadend = noop
+  onerror = noop
+
   event = {}
   responseHeader = {}
 
@@ -108,8 +110,11 @@ export default class XMLHttpRequest {
           this.responseText = info.data
           this.emit('load')
           this.emit('readystatechange')
+          this.onloadend()
+          this.onreadystatechange()
         },
         fail: info => {
+          console.log('error', info)
           this.readyState = XMLHttpRequest.DONE
           this.status = info.statusCode
           this.response =
@@ -117,6 +122,8 @@ export default class XMLHttpRequest {
           this.responseHeader = info.header
           this.emit('error')
           this.emit('readystatechange')
+          this.onerror()
+          this.onreadystatechange()
         }
       })
     }
