@@ -1,4 +1,5 @@
 import {canvas} from './canvas'
+import {img} from './Image'
 
 export class Element {
   style = {cursor: null}
@@ -18,7 +19,10 @@ export class Element {
 
 export const HTMLCanvasElement = canvas.constructor
 
-export const HTMLImageElement = wx.createImage().constructor
+
+export class HTMLImageElement extends img.constructor {
+
+}
 
 export class HTMLVideoElement extends Element {
 

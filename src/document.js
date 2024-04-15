@@ -27,11 +27,13 @@ export default {
   },
 
   createElement(tag) {
+    tag = tag.toLowerCase()
     switch (tag) {
       case 'canvas': {
         return new Canvas()
       }
 
+      case 'image':
       case 'img': {
         return new Image()
       }

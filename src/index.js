@@ -1,5 +1,5 @@
 import {noop} from './util'
-import Image from './Image'
+import Image, {img} from './Image'
 import {canvas} from './canvas'
 import location from './location'
 import document from './document'
@@ -57,7 +57,7 @@ if (platform === 'devtools') {
   GameGlobal.removeEventListener = noop
   GameGlobal.localStorage = localStorage
   GameGlobal.XMLHttpRequest = XMLHttpRequest
-  GameGlobal.HTMLImageElement = HTMLImageElement
+  GameGlobal.HTMLImageElement = img.constructor.name !== 'Object' ? img.constructor : HTMLImageElement
   GameGlobal.HTMLVideoElement = HTMLVideoElement
   GameGlobal.HTMLCanvasElement = HTMLCanvasElement
   GameGlobal.WebGLRenderingContext = GameGlobal.WebGLRenderingContext || {}

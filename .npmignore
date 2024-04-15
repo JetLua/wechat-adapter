@@ -2,3 +2,5 @@ src
 .babelrc
 .gitignore
 rollup.config.js
+
+.DS_Store
