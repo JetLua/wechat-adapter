@@ -1,6 +1,7 @@
 import {Canvas} from './canvas'
 import Image from './Image'
 import {Element} from './element'
+import Video from './video';
 
 const stack = {}
 
@@ -36,6 +37,10 @@ export default {
       case 'image':
       case 'img': {
         return new Image()
+      }
+
+      case 'video': {
+        return new Video();
       }
 
       default: {
