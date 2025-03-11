@@ -28,7 +28,7 @@ importers:
         version: 7.24.3(@babel/core@7.24.3)
       '@babel/runtime':
         specifier: ^7.22.6
-        version: 7.24.1
+        version: 7.26.10
       '@babel/runtime-corejs3':
         specifier: ^7.22.6
         version: 7.26.10
@@ -644,8 +644,8 @@ packages:
     resolution: {integrity: sha512-uITFQYO68pMEYR46AHgQoyBg7KPPJDAbGn4jUTIRgCFJIp88MIBUianVOplhZDEec07bp9zIyr4Kp0FCyQzmWg==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/runtime@7.24.1':
-    resolution: {integrity: sha512-+BIznRzyqBf+2wCTxcKE3wDjfGeCoVE61KSHGpkzqrLi8qxqFwBeUFyId2cxkTmm55fzDGnm0+yCxaxygrLUnQ==}
+  '@babel/runtime@7.26.10':
+    resolution: {integrity: sha512-2WJMeRQPHKSPemqk/awGrAiuFfzBmOIPXKizAsVhWH9YJqLZ0H+HS4c8loHGgW6utJ3E/ejXQUsiGaQy2NZ9Fw==}
     engines: {node: '>=6.9.0'}
 
   '@babel/template@7.24.0':
@@ -1773,7 +1773,7 @@ snapshots:
       core-js-pure: 3.41.0
       regenerator-runtime: 0.14.1
 
-  '@babel/runtime@7.24.1':
+  '@babel/runtime@7.26.10':
     dependencies:
       regenerator-runtime: 0.14.1
 
@@ -2076,7 +2076,7 @@ snapshots:
 
   regenerator-transform@0.15.2:
     dependencies:
-      '@babel/runtime': 7.24.1
+      '@babel/runtime': 7.26.10
 
   regexpu-core@5.3.2:
     dependencies:
