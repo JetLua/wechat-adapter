@@ -31,7 +31,7 @@ importers:
         version: 7.24.1
       '@babel/runtime-corejs3':
         specifier: ^7.22.6
-        version: 7.24.1
+        version: 7.26.10
       '@rollup/plugin-babel':
         specifier: ^5.3.1
         version: 5.3.1(@babel/core@7.24.3)(rollup@2.79.1)
@@ -640,8 +640,8 @@ packages:
   '@babel/regjsgen@0.8.0':
     resolution: {integrity: sha512-x/rqGMdzj+fWZvCOYForTghzbtqPDZ5gPwaoNGHdgDfF2QA/XZbCBp4Moo5scrkAMPhB7z26XM/AaHuIJdgauA==}
 
-  '@babel/runtime-corejs3@7.24.1':
-    resolution: {integrity: sha512-T9ko/35G+Bkl+win48GduaPlhSlOjjE5s1TeiEcD+QpxlLQnoEfb/nO/T+TQqkm+ipFwORn+rB8w14iJ/uD0bg==}
+  '@babel/runtime-corejs3@7.26.10':
+    resolution: {integrity: sha512-uITFQYO68pMEYR46AHgQoyBg7KPPJDAbGn4jUTIRgCFJIp88MIBUianVOplhZDEec07bp9zIyr4Kp0FCyQzmWg==}
     engines: {node: '>=6.9.0'}
 
   '@babel/runtime@7.24.1':
@@ -792,8 +792,8 @@ packages:
   core-js-compat@3.36.1:
     resolution: {integrity: sha512-Dk997v9ZCt3X/npqzyGdTlq6t7lDBhZwGvV94PKzDArjp7BTRm7WlDAXYd/OWdeFHO8OChQYRJNJvUCqCbrtKA==}
 
-  core-js-pure@3.36.1:
-    resolution: {integrity: sha512-NXCvHvSVYSrewP0L5OhltzXeWFJLo2AL2TYnj6iLV3Bw8mM62wAQMNgUCRI6EBu6hVVpbCxmOPlxh1Ikw2PfUA==}
+  core-js-pure@3.41.0:
+    resolution: {integrity: sha512-71Gzp96T9YPk63aUvE5Q5qP+DryB4ZloUZPSOebGM88VNw8VNfvdA7z6kGA8iGOTEzAomsRidp4jXSmUIJsL+Q==}
 
   debug@4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
@@ -846,6 +846,7 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
+    deprecated: Glob versions prior to v9 are no longer supported
 
   globals@11.12.0:
     resolution: {integrity: sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==}
@@ -865,6 +866,7 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -1766,9 +1768,9 @@ snapshots:
 
   '@babel/regjsgen@0.8.0': {}
 
-  '@babel/runtime-corejs3@7.24.1':
+  '@babel/runtime-corejs3@7.26.10':
     dependencies:
-      core-js-pure: 3.36.1
+      core-js-pure: 3.41.0
       regenerator-runtime: 0.14.1
 
   '@babel/runtime@7.24.1':
@@ -1945,7 +1947,7 @@ snapshots:
     dependencies:
       browserslist: 4.23.0
 
-  core-js-pure@3.36.1: {}
+  core-js-pure@3.41.0: {}
 
   debug@4.3.4:
     dependencies:
